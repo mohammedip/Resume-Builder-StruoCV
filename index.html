@@ -17,29 +17,27 @@
     <div class="flex justify-between mb-8">
         <div class="flex-1 flex items-center">
             <div class="w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full mr-3" id="step-indicator-1">1</div>
-            <div class="w-full bg-gray-300 h-2 rounded-full">
-                <div class="bg-blue-500 h-2 rounded-full transition-all duration-500" id="progress"></div>
-            </div>
+            <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
             <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-2">2</div>
-            <div class="w-full bg-gray-300 h-2 rounded-full"></div>
+            <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
             <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-3">3</div>
-            <div class="w-full bg-gray-300 h-2 rounded-full"></div>
+            <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
             <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-4">4</div>
-            <div class="w-full bg-gray-300 h-2 rounded-full"></div>
+            <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
             <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-5">5</div>
-            <div class="w-full bg-gray-300 h-2 rounded-full"></div>
+            <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
             <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-6">6</div>
-            <div class="w-full bg-gray-300 h-2 rounded-full"></div>
+            <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
             <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-7">7</div>
@@ -66,7 +64,7 @@
         <label for="portfolio" class="block text-gray-700 font-bold">Portfolio</label>
         <input type="url" id="portfolio" name="portfolio" class="block w-full mb-4 px-4 py-2 border rounded">
         <div class="flex justify-between">
-            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" >Suivant</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" id="suivant">Suivant</button>
         </div>
     </form>
 
@@ -77,8 +75,8 @@
         <label for="profile-summary" class="block text-gray-700 font-bold">Résumé du Profil</label>
         <textarea id="profile-summary" name="profile-summary" class="block w-full mb-4 px-4 py-2 border rounded" required></textarea>
         <div class="flex justify-between">
-            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition">Précédent</button>
-            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Suivant</button>
+            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"id="precedent">Précédent</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition"id="suivant">Suivant</button>
         </div>
     </form>
 
@@ -97,8 +95,8 @@
         <ul id="soft-skills-list" class="mb-4"></ul>
 
         <div class="flex justify-between">
-            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" >Précédent</button>
-            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" >Suivant</button>
+            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" id="precedent">Précédent</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" id="suivant">Suivant</button>
         </div>
     </form>
 
@@ -111,8 +109,8 @@
         <ul id="languages-list" class="mb-4"></ul>
 
         <div class="flex justify-between">
-            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition">Précédent</button>
-            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" >Suivant</button>
+            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"id="precedent">Précédent</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" id="suivant">Suivant</button>
         </div>
     </form>
 
@@ -125,8 +123,8 @@
         <ul id="interests-list" class="mb-4"></ul>
 
         <div class="flex justify-between">
-            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" >Précédent</button>
-            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Suivant</button>
+            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" id="precedent">Précédent</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition"id="suivant">Suivant</button>
         </div>
     </form>
 
@@ -139,8 +137,8 @@
         <ul id="education-list" class="mb-4"></ul>
 
         <div class="flex justify-between">
-            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition">Précédent</button>
-            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Suivant</button>
+            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"id="precedent">Précédent</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition"id="suivant">Suivant</button>
         </div>
     </form>
 
@@ -153,8 +151,8 @@
         <ul id="work-experience-list" class="mb-4"></ul>
 
         <div class="flex justify-between">
-            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" >Précédent</button>
-            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" >Suivant</button>
+            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" id="precedent">Précédent</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" id="suivant">Suivant</button>
         </div>
     </form>
 
@@ -167,7 +165,7 @@
         <ul id="certifications-list" class="mb-4"></ul>
 
         <div class="flex justify-between">
-            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" >Précédent</button>
+            <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" id="precedent">Précédent</button>
             <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Terminer</button>
         </div>
     </form>
