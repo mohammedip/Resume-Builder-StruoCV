@@ -1,0 +1,15 @@
+{
+  "name": "resume-builder-struocv",
+  "version": "1.0.0",
+  "description": "Ce projet consiste à développer une application de création de CV avec un formulaire à étapes et des options de personnalisation avancées. L'objectif est de fournir un outil intuitif et complet pour aider les utilisateurs à créer des CV professionnels, dynamiques et adaptés à leurs besoins spécifiques.",
+  "main": "script.js",
+  "scripts": {
+    "build": "tailwindcss -i ./src/style.css -o ./src/output.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}

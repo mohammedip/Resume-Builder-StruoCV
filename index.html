@@ -4,8 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./src/style.css">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.9.2/html2pdf.bundle.min.js"></script> -->
+
    
 </head>
 <body>
@@ -16,35 +18,40 @@
     <!-- Barre de progression avec indicateurs numériques -->
     <div class="flex justify-between mb-8">
         <div class="flex-1 flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full mr-3" id="step-indicator-1">1</div>
+            <div class="w-10 h-10 flex items-center justify-center bg-blue-500 text-white rounded-full " id="step-indicator-1">1</div>
             <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-2">2</div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full " id="step-indicator-2">2</div>
             <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-3">3</div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full " id="step-indicator-3">3</div>
             <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-4">4</div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full " id="step-indicator-4">4</div>
             <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-5">5</div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full " id="step-indicator-5">5</div>
             <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-6">6</div>
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full " id="step-indicator-6">6</div>
             <div class="w-full bg-blue-500 h-2 rounded-full"></div>
         </div>
         <div class="flex-1 flex items-center">
-            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full mr-3" id="step-indicator-7">7</div>
+          <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full " id="step-indicator-7">7</div>
+          <div class="w-full bg-blue-500 h-2 rounded-full "></div>
+      </div>
+        <div class="flex-1 flex items-center">
+            <div class="w-10 h-10 flex items-center justify-center bg-gray-300 text-gray-500 rounded-full " id="step-indicator-8">8</div>
         </div>
     </div>
 
     <!-- Formulaires -->
+     <section id="formToPdf">
     <form id="personal-info-form" class="showing">
         <h3 class="text-2xl font-semibold mb-4 text-gray-800">Informations Personnelles</h3>
         <label for="full-name" class="block text-gray-700 font-bold">Nom Complet</label>
@@ -166,10 +173,21 @@
 
         <div class="flex justify-between">
             <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" id="precedent">Précédent</button>
-            <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition">Terminer</button>
+            <button type="button" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" id="suivant">Suivant</button>
         </div>
     </form>
+    <form id="CVModel-form" class="hidden">
+      <h3 class="text-2xl font-semibold mb-4 text-gray-800">CV Model</h3>
+      
+    
+      <div class="flex justify-between">
+          <button type="button" class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition" id="precedent">Précédent</button>
+          <button type="submit" class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition" id="terminer">Terminer</button>
+      </div>
+  </form>
+  </section>
 </div>
-    <script src="script.js"></script>
+    <script src="./src/script.js"></script>
+
 </body>
 </html>
