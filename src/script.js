@@ -70,7 +70,7 @@ function ajouter1(listId, inputId) {
             listItem.innerText = `${input1.value} - ${input2.value}`;
             list.appendChild(listItem);
             input1.value = '';
-            input2.value = 'Débutant';        
+            input2.value = '';        
         }
     }      
     function supprimer(listId) {
