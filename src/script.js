@@ -9,8 +9,9 @@ const form8 =document.getElementById('certifications-form');
 const form9 =document.getElementById('CVModel-form');
 const buttonsSuivant =document.querySelectorAll('#suivant');
 const buttonsPrecedent =document.querySelectorAll('#precedent');
+// const buttonsAjouter =document.querySelectorAll('#ajouter');
 const buttonTrminer = document.getElementById('terminer')
-const formToPdf = document.getElementById('formToPdf');
+// const formToPdf = document.getElementById('formToPdf');
 
 
 function IndicatorAvancer(etape) {
@@ -37,10 +38,41 @@ function hideforms(form) {
             form.classList.remove('showing');
         }
 
-function ToPdf() {
+// function ToPdf() {
          
-          html2pdf().from(formToPdf).save();
-      }
+//           html2pdf().from(formToPdf).save();
+//       }
+
+function ajouter(listId, inputId) {
+  const list = document.getElementById(listId);
+  let input=document.getElementById(inputId);
+  const listItem = document.createElement('li');
+  
+  if (input.value !== '') {
+     
+      listItem.className = 'text-gray-700 mb-2 ml-6';
+      listItem.innerText = input.value;
+      list.appendChild(listItem);
+      input.value = '';
+              
+  }
+} 
+
+function ajouter1(listId, inputId) {
+        const list = document.getElementById(listId);
+        const input1=document.getElementById(`${inputId}1`);
+        const input2=document.getElementById(`${inputId}2`);
+        const listItem = document.createElement('li');
+        
+        if (input1.value !== '' && input2.value !== '') {
+           
+            listItem.className = 'text-gray-700 mb-2 ml-6';
+            listItem.innerText = `${input1.value} - ${input2.value}`;
+            list.appendChild(listItem);
+            input1.value = '';
+            input2.value = '';        
+        }
+    }      
 
 
 
@@ -139,8 +171,28 @@ buttonsPrecedent.forEach(function(buttonPrecedent) {
   });
 })
 
-buttonTrminer.addEventListener("click",()=>{
+// buttonsAjouter.forEach(function(buttonAjouter) {
+//   buttonAjouter.addEventListener("click",(event)=>{
 
-  ToPdf();
+//  if(event.target.closest("form")===form4){
+//   ajouter('languages-list', 'languages-niveau')
+   
+// }else if(event.target.closest("form")===form6){
+//   ajouter('education-list', 'education-details')
+ 
+// }else if(event.target.closest("form")===form7){
+//   ajouter('work-experience-list', 'work-experience-details')
 
-})
+// }else if(event.target.closest("form")===form8){
+//   ajouter('certifications-list', 'certification-nom-link')
+
+// }
+// });
+// })
+
+
+// buttonTrminer.addEventListener("click",()=>{
+
+//   ToPdf();
+
+// })

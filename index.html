@@ -169,7 +169,7 @@
             name="portfolio"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
-          <div class="flex justify-between">
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-blue-500 text-white px-6 py-2 rounded hover:bg-blue-600 transition"
@@ -203,7 +203,7 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             required
           ></textarea>
-          <div class="flex justify-between">
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
@@ -234,20 +234,20 @@
             name="hard-skills"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
+          <ul id="hard-skills-list" class="mb-2 list-disc"></ul>
           <button
             type="button"
             class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-          >
+           onclick="ajouter('hard-skills-list', 'hard-skills')" >
             Ajouter
           </button>
           <button
             type="button"
             class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-          >
+          id="supprimer"  >
             Supprimer
           </button>
-          <ul id="hard-skills-list" class="mb-4"></ul>
-
+          
           <label for="soft-skills" class="block text-gray-700 font-bold"
             >Compétences Interpersonnelles (Soft Skills)</label
           >
@@ -257,21 +257,22 @@
             name="soft-skills"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
+          <ul id="soft-skills-list" class="mb-2 list-disc"></ul>
+
           <button
             type="button"
             class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-          >
+           onclick="ajouter('soft-skills-list', 'soft-skills')" >
             Ajouter
           </button>
           <button
             type="button"
             class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-          >
+          id="supprimer"  >
             Supprimer
           </button>
-          <ul id="soft-skills-list" class="mb-4"></ul>
-
-          <div class="flex justify-between">
+          
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
@@ -295,7 +296,7 @@
           >
           <input
             type="text"
-            id="languages"
+            id="languages-niveau1"
             name="languages"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
@@ -303,28 +304,29 @@
             >Niveau</label
           >
           <select
-            id="level"
+            id="languages-niveau2"
             name="level"
             class="block w-full mb-4 px-4 py-2 border rounded"
           >
-            <option value="beginner">Débutant</option>
-            <option value="intermediate">Intermédiaire</option>
-            <option value="advanced">Avancé</option>
+            <option value="Débutant">Débutant</option>
+            <option value="Intermédiaire">Intermédiaire</option>
+            <option value="Avancé">Avancé</option>
           </select>
+          <ul id="languages-list" class="mb-2 list-disc"></ul>
           <button
             type="button"
             class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-          >
+            onclick="ajouter1('languages-list', 'languages-niveau')" >
             Ajouter
           </button>
           <button
             type="button"
             class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-          >
+          id="supprimer"  >
             Supprimer
           </button>
-          <ul id="languages-list" class="mb-4"></ul>
-          <div class="flex justify-between">
+          
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
@@ -355,20 +357,21 @@
             name="interests"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
+          <ul id="interests-list" class="mb-2 list-disc"></ul>
           <button
             type="button"
             class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-          >
+            onclick="ajouter('interests-list', 'interests')" >
             Ajouter
           </button>
           <button
             type="button"
             class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-          >
+          id="supprimer"  >
             Supprimer
           </button>
-          <ul id="interests-list" class="mb-4"></ul>
-          <div class="flex justify-between">
+          
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
@@ -395,7 +398,7 @@
           >
           <input
             type="text"
-            id="education"
+            id="education-details1"
             name="education"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
@@ -404,24 +407,25 @@
           >
           <input
             type="text"
-            id="education-details"
+            id="education-details2"
             name="education-details"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
+          <ul id="education-list" class="mb-2 list-disc"></ul>
           <button
             type="button"
-            class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-          >
+            class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition "
+            onclick="ajouter1('education-list', 'education-details')" >
             Ajouter
           </button>
           <button
             type="button"
             class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-          >
+          id="supprimer"  >
             Supprimer
           </button>
-          <ul id="education-list" class="mb-4"></ul>
-          <div class="flex justify-between">
+          
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
@@ -448,7 +452,7 @@
           >
           <input
             type="text"
-            id="work-experience"
+            id="work-experience-details1"
             name="work-experience"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
@@ -457,24 +461,25 @@
           >
           <input
             type="text"
-            id="work-details"
+            id="work-experience-details2"
             name="work-details"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
+          <ul id="work-experience-list" class="mb-2 list-disc"></ul>
           <button
             type="button"
             class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-          >
+            onclick="ajouter1('work-experience-list', 'work-experience-details')" >
             Ajouter
           </button>
           <button
             type="button"
             class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-          >
+          id="supprimer"  >
             Supprimer
           </button>
-          <ul id="work-experience-list" class="mb-4"></ul>
-          <div class="flex justify-between">
+          
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
@@ -501,7 +506,7 @@
           >
           <input
             type="text"
-            id="certifications"
+            id="certifications-nom-link1"
             name="certifications"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
@@ -510,24 +515,25 @@
           >
           <input
             type="text"
-            id="certification-link"
+            id="certifications-nom-link2"
             name="certification-link"
             class="block w-full mb-4 px-4 py-2 border rounded"
           />
+          <ul id="certifications-list" class="mb-2 list-disc"></ul>
           <button
             type="button"
             class="bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 transition"
-          >
+           onclick="ajouter1('certifications-list', 'certifications-nom-link')" >
             Ajouter
           </button>
           <button
             type="button"
             class="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 transition"
-          >
+          id="supprimer"  >
             Supprimer
           </button>
-          <ul id="certifications-list" class="mb-4"></ul>
-          <div class="flex justify-between">
+          
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
@@ -565,7 +571,7 @@
             />
             <label for="classic" class="text-lg">Classic CV</label>
           </div>
-          <div class="flex justify-between">
+          <div class="flex justify-between mt-4">
             <button
               type="button"
               class="bg-gray-500 text-white px-6 py-2 rounded hover:bg-gray-600 transition"
