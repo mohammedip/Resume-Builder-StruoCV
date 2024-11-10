@@ -70,10 +70,15 @@ function ajouter1(listId, inputId) {
             listItem.innerText = `${input1.value} - ${input2.value}`;
             list.appendChild(listItem);
             input1.value = '';
-            input2.value = '';        
+            input2.value = 'Débutant';        
         }
     }      
-
+    function supprimer(listId) {
+      
+      const list = document.getElementById(listId); 
+      list.removeChild(list.lastElementChild);      
+      }
+    
 
 
 
