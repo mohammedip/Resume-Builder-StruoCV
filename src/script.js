@@ -12,19 +12,19 @@ const buttonsPrecedent =document.querySelectorAll('#precedent');
 // const buttonsAjouter =document.querySelectorAll('#ajouter');
 const buttonTrminer = document.getElementById('terminer')
 // const formToPdf = document.getElementById('formToPdf');
-
+let idCount=0;
 
 function IndicatorAvancer(etape) {
      
             const indicator = document.getElementById(`step-indicator-${etape}`);   
             indicator.classList.remove('bg-gray-300', 'text-gray-500');
-            indicator.classList.add('bg-blue-500', 'text-white');
+            indicator.classList.add('bg-fuchsia-700', 'text-white');
     }
 function IndicatorReculer(etape) {
      
       const indicator = document.getElementById(`step-indicator-${etape}`);   
       indicator.classList.add('bg-gray-300', 'text-gray-500');
-      indicator.classList.remove('bg-blue-500', 'text-white');
+      indicator.classList.remove('bg-fuchsia-700', 'text-white');
 }
 function showings(form) {
 
@@ -47,14 +47,22 @@ function ajouter(listId, inputId) {
   const list = document.getElementById(listId);
   let input=document.getElementById(inputId);
   const listItem = document.createElement('li');
+  // const butsup=document.createElement()
   
   if (input.value !== '') {
      
       listItem.className = 'text-gray-700 mb-2 ml-6';
+      listItem.id = idCount;
       listItem.innerText = input.value;
+      listItem.innerHTML += `<button
+      type="button"
+      class="bg-red-500 text-white text-xs  px-2 py-1 rounded hover:bg-red-600 transition ml-10"
+     onclick="supprimer('${listItem.id}')" >
+      <i class="fa-solid fa-trash-can"></i>
+    </button>`
       list.appendChild(listItem);
       input.value = '';
-              
+      idCount++;
   }
 } 
 
@@ -67,16 +75,23 @@ function ajouter1(listId, inputId) {
         if (input1.value !== '' && input2.value !== '') {
            
             listItem.className = 'text-gray-700 mb-2 ml-6';
+            listItem.id = idCount;
             listItem.innerText = `${input1.value} - ${input2.value}`;
+            listItem.innerHTML += `<button
+      type="button"
+      class="bg-red-500 text-white text-xs  px-2 py-1 rounded hover:bg-red-600 transition ml-10"
+     onclick="supprimer('${listItem.id}')" >
+      <i class="fa-solid fa-trash-can"></i>
+    </button>`
             list.appendChild(listItem);
             input1.value = '';
-            input2.value = '';        
+            input2.value = ''; 
+            idCount++;
         }
     }      
-    function supprimer(listId) {
-      
-      const list = document.getElementById(listId); 
-      list.removeChild(list.lastElementChild);      
+    function supprimer(listItemId) {
+      const listItem=document.getElementById(listItemId);
+      listItem.remove()
       }
     
 
