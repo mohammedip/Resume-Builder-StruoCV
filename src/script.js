@@ -53,7 +53,7 @@ function displayImg(event) {
 function ToPdf() {
   
   const style = {
-    margin: 0.5,
+    
     filename: 'CV_Model1.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { scale: 2 },
@@ -276,37 +276,41 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
         <aside class="w-1/3 bg-gray-800 text-white p-6">
           <!-- Profile Picture -->
           <div class="flex justify-center mb-6">
-            <img src="https://via.placeholder.com/120" alt="Profile Picture" class="rounded-full border-4 border-gray-700">
+            <img src="${document.getElementById('profile-photo').src}" alt="Profile Picture" class="rounded-full border-4 border-gray-700">
           </div>
     
           <!-- Profile Info -->
           <div class="mb-6">
             <h2 class="text-lg font-bold mb-2">Profil</h2>
-            <p class="text-sm"><strong>Adresse:</strong> Mon adresse précise</p>
-            <p class="text-sm"><strong>Email:</strong> email@example.com</p>
-            <p class="text-sm"><strong>Téléphone:</strong> +212 600 000 000</p>
-            <p class="text-sm"><strong>Date de Naissance:</strong> JJ/MM/AAAA</p>
-            <p class="text-sm"><strong>Permis:</strong> Oui/Non</p>
+            <p class="text-sm"><strong>Adresse:</strong> ${document.getElementById('address').value}</p>
+            <p class="text-sm"><strong>Email:</strong>${document.getElementById('email').value}</p>
+            <p class="text-sm"><strong>Téléphone:</strong> ${document.getElementById('phone').value}</p>
+            <p class="text-sm"><strong>LinkedIn:</strong> ${document.getElementById('linkedin').value}</p>
+            <p class="text-sm"><strong>GitHub:</strong> ${document.getElementById('github').value}</p>
+            <p class="text-sm"><strong>Portfolio:</strong> ${document.getElementById('portfolio').value}</p>
+
           </div>
     
           <!-- Skills -->
           <div class="mb-6">
-            <h2 class="text-lg font-bold mb-2">Compétences</h2>
-            <ul class="text-sm space-y-1">
-              <li>- Compétence 1</li>
-              <li>- Compétence 2</li>
-              <li>- Compétence 3</li>
-            </ul>
+            <h2 class="text-lg font-bold mb-2">Hard Skills</h2>
+            ${hard_skills}
           </div>
-    
+           <div class="mb-6">
+            <h2 class="text-lg font-bold mb-2">Soft Skills</h2>
+            ${soft_skills}
+          </div>
+
+           <!-- Languages -->
+          <div>
+            <h2 class="text-lg font-bold mb-2">Languages</h2>
+             ${languages}
+          </div>
+
           <!-- Hobbies -->
           <div>
             <h2 class="text-lg font-bold mb-2">Loisirs</h2>
-            <ul class="text-sm space-y-1">
-              <li>- Loisir 1</li>
-              <li>- Loisir 2</li>
-              <li>- Loisir 3</li>
-            </ul>
+            ${interests}
           </div>
         </aside>
     
@@ -314,11 +318,10 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
         <main class="w-2/3 p-6">
           <!-- Header -->
           <div class="mb-6">
-            <h1 class="text-3xl font-bold text-gray-800">NOM PRENOM</h1>
-            <p class="text-lg text-gray-600">Métier</p>
+            <h1 class="text-3xl font-bold text-gray-800">${document.getElementById('full-name').value}</h1>
+            <p class="text-lg text-gray-600">${document.getElementById('job-title').value}</p>
             <p class="mt-4 text-sm text-gray-500">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non molestie ligula, non commodo magna.
-            </p>
+            ${document.getElementById('profile-summary').value}            </p>
           </div>
     
           <!-- Professional Experience -->
@@ -326,20 +329,10 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
             <h2 class="text-xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Expériences Professionnelles</h2>
             
             <div class="mb-4">
-              <p class="font-bold text-gray-700">Poste Occupé - Entreprise</p>
-              <p class="text-sm text-gray-500">Sept 2018 - Présent</p>
-              <p class="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lacinia nisi.
-              </p>
+              ${ work_experience}
+
             </div>
     
-            <div class="mb-4">
-              <p class="font-bold text-gray-700">Poste Occupé - Entreprise</p>
-              <p class="text-sm text-gray-500">Sept 2016 - Sept 2018</p>
-              <p class="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque sit amet lacinia nisi.
-              </p>
-            </div>
           </div>
     
           <!-- Education -->
@@ -347,27 +340,27 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
             <h2 class="text-xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Formations</h2>
     
             <div class="mb-4">
-              <p class="font-bold text-gray-700">Diplôme - Établissement</p>
-              <p class="text-sm text-gray-500">Sept 2014 - Juin 2016</p>
-              <p class="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis.
-              </p>
+               ${education}
             </div>
     
+            
+          </div>
+           <!-- Certifications -->
+          <div>
+            <h2 class="text-xl font-bold text-gray-800 border-b-2 border-gray-300 pb-2 mb-4">Certifications</h2>
+    
             <div class="mb-4">
-              <p class="font-bold text-gray-700">Diplôme - Établissement</p>
-              <p class="text-sm text-gray-500">Sept 2012 - Juin 2014</p>
-              <p class="text-sm text-gray-600">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer facilisis.
-              </p>
+                ${certifications}
             </div>
+    
+            
           </div>
         </main>
       </div>`;
 
 }else if(cvModelInput.value==="Classic CV"){
 
-  cv.innerHTML=`<div class="flex items-center gap-6">
+  cv.innerHTML=`<div class="flex items-center gap-6 pl-6">
           <img src="${document.getElementById('profile-photo').src}" alt="Profile Picture" class="w-24 h-24 rounded-full">
           <div>
             <h1 class="text-2xl font-bold">${document.getElementById('full-name').value}</h1>
@@ -379,7 +372,7 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
         <hr class="my-6">
     
         <!-- Education Section -->
-        <div>
+        <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Education</h2>
           ${education}
         </div>
@@ -387,21 +380,21 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
         <hr class="my-6">
     
         <!-- Skills Section -->
-        <div>
+        <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Hard Skills</h2>
           ${hard_skills}
         </div>
     
         <hr class="my-6">
      <!-- Skills Section -->
-        <div>
+        <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Soft Skills</h2>
           ${soft_skills}
         </div>
     
         <hr class="my-6"> <!-- Skills Section -->
         <!-- Experience Section -->
-        <div>
+        <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Profotional Experience</h2>
           <div class="space-y-4">
             ${ work_experience}
@@ -409,19 +402,19 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
         </div>
     
         <hr class="my-6">
-        <div>
+        <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Certifications</h2>
           ${certifications}
         </div>
     
         <hr class="my-6">
-        <div>
+        <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Languages</h2>
           ${languages}
         </div>
     
         <hr class="my-6">
-         <div>
+         <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Loisirs </h2>
           ${interests}
         </div>
@@ -429,7 +422,7 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
         <hr class="my-6">
 
         <!-- Contact Section -->
-        <div>
+        <div class="pl-6">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Contact</h2>
           <p class="text-gray-600">Adresse: ${document.getElementById('address').value}</p>
           <p class="text-gray-600">Email: ${document.getElementById('email').value}</p>
