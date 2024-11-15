@@ -53,17 +53,96 @@ function displayImg(event) {
 function ToPdf() {
   
   const style = {
-    
+    margin:0,
     filename: 'CV_Model1.pdf',
     image: { type: 'jpeg', quality: 0.98 },
-    html2canvas: { scale: 2 },
-    jsPDF: { unit: 'in', format: 'a4', orientation: 'portrait' }
+    html2canvas: { scale: 4 },
+    jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
 };
 
       html2pdf().set(style).from(cv).save();
 
       }
 
+
+
+function validation(){
+
+  
+  let valid = true;
+  const photoInput = document.querySelector("#profile-photo");
+   if (!photoInput.files.length) {
+  valid = false; 
+  document.getElementById("photoError").classList.remove("hidden");
+ } else { 
+  document.getElementById("photoError").classList.add("hidden");
+ }
+  const name = document.getElementById("full-name").value;
+  if (name === "") {
+      valid = false;
+      document.getElementById("nameError").classList.remove("hidden");
+  } else {
+      document.getElementById("nameError").classList.add("hidden");
+  }
+
+  const email = document.getElementById("email").value;
+  const emailRegex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+  if (!emailRegex.test(email) || email === "") {
+      valid = false;
+      document.getElementById("emailError").classList.remove("hidden");
+  } else {
+      document.getElementById("emailError").classList.add("hidden");
+  }
+
+  const phone = document.getElementById("phone").value;
+  const phoneRegex = /^\d{10}$/;
+  if (!phoneRegex.test(phone) || phone === "") {
+      valid = false;
+      document.getElementById("phoneError").classList.remove("hidden");
+  } else {
+      document.getElementById("phoneError").classList.add("hidden");
+  }
+
+  const address = document.getElementById("address").value;
+  if (address === "") {
+      valid = false;
+      document.getElementById("addressError").classList.remove("hidden");
+  } else {
+      document.getElementById("addressError").classList.add("hidden");
+     
+  }
+
+ return valid;
+     
+}
+function inputValidation(form){
+let valid = true;
+
+    const input = form.querySelector(".inputData");
+
+    if (input.value === "") {
+      valid = false;
+      document.querySelector(".inputError").classList.remove("hidden");
+  } else {
+      document.querySelector(".inputError").classList.add("hidden");
+  }
+
+return valid;
+}
+function inputsValidation(form){
+  let valid = true;
+  
+      const data = form.querySelector(".inputData");
+    
+      if (!data.hasChildNodes()) {
+        valid = false;
+        document.querySelector(".inputError").classList.remove("hidden");
+      
+    } else {
+      document.querySelector(".inputError").classList.add("hidden");
+    }
+  return valid;
+  }
 function ajouter1(listId, inputId) {
   const list = document.getElementById(listId);
   let input=document.getElementById(inputId);
@@ -130,45 +209,60 @@ function ajouter1(listId, inputId) {
 buttonsSuivant.forEach(function(buttonSuivant) {
   buttonSuivant.addEventListener("click",(event)=>{
 if(event.target.closest("form")===form1){
-
+validation()
+if(validation()){
 hideforms(form1);
 showings(form2);
 IndicatorAvancer(1) 
+}
 }else if(event.target.closest("form")===form2){
-
+  inputValidation(form2)
+  if(inputValidation(form2)){
   hideforms(form2);
   showings(form3);
   IndicatorAvancer(2) 
+  }
 }else if(event.target.closest("form")===form3){
 
   hideforms(form3);
   showings(form4);
   IndicatorAvancer(3) 
+  
 }else if(event.target.closest("form")===form4){
-
+  inputsValidation(form4)
+  if(inputsValidation(form4)){
   hideforms(form4);
   showings(form5);
   IndicatorAvancer(4) 
+  }
 }else if(event.target.closest("form")===form5){
-
+  inputsValidation(form5)
+  if(inputsValidation(form5)){
   hideforms(form5);
   showings(form6);
-  IndicatorAvancer(5) 
+  IndicatorAvancer(5)
+  } 
 }else if(event.target.closest("form")===form6){
-
+  inputsValidation(form6)
+  if(inputsValidation(form6)){
   hideforms(form6);
   showings(form7);
   IndicatorAvancer(6) 
+  }
 }else if(event.target.closest("form")===form7){
-
+  inputsValidation(form7)
+  if(inputsValidation(form7)){
   hideforms(form7);
   showings(form8);
   IndicatorAvancer(7) 
+  }
 }else if(event.target.closest("form")===form8){
-
+  inputsValidation(form8)
+  if(inputsValidation(form8)){
   hideforms(form8);
   showings(form9);
   IndicatorAvancer(8) 
+  }
 }
 });
 })
@@ -267,16 +361,17 @@ for (let i = 0; i < certifications_list.length; i++) {
   certifications += certifications_list[i].textContent + "<br>";
 }
 
-
+let inputPhotosUrl = document.querySelector("#profile-photo").files[0];
+inputPhoto = URL.createObjectURL(inputPhotosUrl);
 if(cvModelInput.value==="Modern CV"){
-
+ 
 cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
 
         <!-- Sidebar -->
-        <aside class="w-1/3 bg-gray-800 text-white p-6">
+        <aside class="w-1/3 bg-gray-800 text-white p-6 h-[297mm] ">
           <!-- Profile Picture -->
           <div class="flex justify-center mb-6">
-            <img src="${document.getElementById('profile-photo').src}" alt="Profile Picture" class="rounded-full border-4 border-gray-700">
+            <img src="${inputPhoto}" alt="Profile Picture" class="rounded-full border-4 border-gray-700">
           </div>
     
           <!-- Profile Info -->
@@ -285,19 +380,19 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
             <p class="text-sm"><strong>Adresse:</strong> ${document.getElementById('address').value}</p>
             <p class="text-sm"><strong>Email:</strong>${document.getElementById('email').value}</p>
             <p class="text-sm"><strong>Téléphone:</strong> ${document.getElementById('phone').value}</p>
-            <p class="text-sm"><strong>LinkedIn:</strong> ${document.getElementById('linkedin').value}</p>
-            <p class="text-sm"><strong>GitHub:</strong> ${document.getElementById('github').value}</p>
-            <p class="text-sm"><strong>Portfolio:</strong> ${document.getElementById('portfolio').value}</p>
+            <p class="text-sm   linkedin"><strong>LinkedIn:</strong> ${document.getElementById('linkedin').value}</p>
+            <p class="text-sm   github"><strong>GitHub:</strong> ${document.getElementById('github').value}</p>
+            <p class="text-sm  portfolio"><strong>Portfolio:</strong> ${document.getElementById('portfolio').value}</p>
 
           </div>
     
           <!-- Skills -->
-          <div class="mb-6">
-            <h2 class="text-lg font-bold mb-2">Hard Skills</h2>
+          <div class="mb-6" >
+            <h2 class="text-lg font-bold mb-2  hard-skills">Hard Skills</h2>
             ${hard_skills}
           </div>
-           <div class="mb-6">
-            <h2 class="text-lg font-bold mb-2">Soft Skills</h2>
+           <div class="mb-6" >
+            <h2 class="text-lg font-bold mb-2  soft-skills">Soft Skills</h2>
             ${soft_skills}
           </div>
 
@@ -357,11 +452,28 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
           </div>
         </main>
       </div>`;
+      if (document.getElementById('linkedin').value === "") {
+        document.querySelector(".linkedin").classList.add("hidden");
+    }  
+    
+    if (document.getElementById('github').value === "") {
+      document.querySelector(".github").classList.add("hidden");
+  }  
+  
+  if (document.getElementById('portfolio').value === "") {
+    document.querySelector(".portfolio").classList.add("hidden");
+} 
+if (hard_skills === "") {
+  document.querySelector(".hard-skills").classList.add("hidden");
+} 
+if (soft_skills === "") {
+  document.querySelector(".soft-skills").classList.add("hidden");
+} 
 
 }else if(cvModelInput.value==="Classic CV"){
 
   cv.innerHTML=`<div class="flex items-center gap-6 pl-6">
-          <img src="${document.getElementById('profile-photo').src}" alt="Profile Picture" class="w-24 h-24 rounded-full">
+          <img src="${inputPhoto}" alt="Profile Picture" class="w-24 h-24 rounded-full">
           <div>
             <h1 class="text-2xl font-bold">${document.getElementById('full-name').value}</h1>
             <p class="text-gray-600 text-sm">${document.getElementById('job-title').value}</p>
@@ -380,14 +492,14 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
         <hr class="my-6">
     
         <!-- Skills Section -->
-        <div class="pl-6">
+        <div class="pl-6 hard-skills">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Hard Skills</h2>
           ${hard_skills}
         </div>
     
         <hr class="my-6">
      <!-- Skills Section -->
-        <div class="pl-6">
+        <div class="pl-6 soft-skills">
           <h2 class="text-lg font-semibold text-gray-800 mb-3">Soft Skills</h2>
           ${soft_skills}
         </div>
@@ -427,11 +539,27 @@ cv.innerHTML=` <div class="max-w-4xl mx-auto bg-white shadow-lg flex">
           <p class="text-gray-600">Adresse: ${document.getElementById('address').value}</p>
           <p class="text-gray-600">Email: ${document.getElementById('email').value}</p>
           <p class="text-gray-600">Téléphone: ${document.getElementById('phone').value}</p>
-          <p class="text-gray-600">LinkedIn: ${document.getElementById('linkedin').value}</p>
-          <p class="text-gray-600">GitHub: ${document.getElementById('github').value}</p>
-          <p class="text-gray-600">Portfolio: ${document.getElementById('portfolio').value}</p>
+          <p class="text-gray-600 linkedin">LinkedIn: ${document.getElementById('linkedin').value}</p>
+          <p class="text-gray-600 github">GitHub: ${document.getElementById('github').value}</p>
+          <p class="text-gray-600 portfolio">Portfolio: ${document.getElementById('portfolio').value}</p>
         </div>`;
-
+        if (document.getElementById('linkedin').value === "") {
+          document.querySelector(".linkedin").classList.add("hidden");
+      }  
+      
+      if (document.getElementById('github').value === "") {
+        document.querySelector(".github").classList.add("hidden");
+    }  
+    
+    if (document.getElementById('portfolio').value === "") {
+      document.querySelector(".portfolio").classList.add("hidden");
+  } 
+  if (hard_skills === "") {
+    document.querySelector(".hard-skills").classList.add("hidden");
+  } 
+  if (soft_skills === "") {
+    document.querySelector(".soft-skills").classList.add("hidden");
+  } 
 }
 
 })

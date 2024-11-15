@@ -656,6 +656,10 @@ video {
   margin-right: 24rem;
 }
 
+.mt-1 {
+  margin-top: 0.25rem;
+}
+
 .mt-2 {
   margin-top: 0.5rem;
 }
@@ -1061,12 +1065,12 @@ video {
   padding-left: 1.25rem;
 }
 
-.pr-8 {
-  padding-right: 2rem;
-}
-
 .pl-6 {
   padding-left: 1.5rem;
+}
+
+.pr-8 {
+  padding-right: 2rem;
 }
 
 .text-center {
@@ -1176,6 +1180,11 @@ video {
 .text-purple-500 {
   --tw-text-opacity: 1;
   color: rgb(168 85 247 / var(--tw-text-opacity));
+}
+
+.text-red-500 {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
 }
 
 .text-teal-500 {

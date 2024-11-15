@@ -111,10 +111,11 @@
               type="file"
               id="profile-photo"
               name="profile-photo"
-              class="hidden"
+              class="hidden "
               accept="image/*"
               onchange="displayImg(event)"
             />
+            <p id="photoError" class="text-red-500 text-xs mt-1 hidden">Please select an image.</p>
        </div>
           <label for="full-name" class="block text-gray-700 font-bold mt-4"
             >Nom Complet</label>
@@ -126,7 +127,7 @@
             placeholder="Nom et Prenom"
             required
           />
-
+          <p id="nameError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid name.</p>
           <label for="email" class="block text-gray-700 font-bold">Email</label>
           <input
             type="email"
@@ -136,6 +137,7 @@
             placeholder="Email"
             required
           />
+          <p id="emailError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid email .</p>
           <label for="phone" class="block text-gray-700 font-bold"
             >Téléphone</label
           >
@@ -147,6 +149,7 @@
             placeholder="Numero de telephone"
             required
           />
+          <p id="phoneError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid phone number.</p>
           <label for="address" class="block text-gray-700 font-bold"
             >Adresse</label
           >
@@ -157,6 +160,8 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             placeholder="Address"
           />
+          <p id="addressError" class="text-red-500 text-xs mt-1 hidden">Please enter a valid address.</p>
+
           <label for="linkedin" class="block text-gray-700 font-bold"
             >LinkedIn</label
           >
@@ -167,6 +172,7 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             placeholder="LinkedIn URL"
           />
+
           <label for="github" class="block text-gray-700 font-bold"
             >GitHub</label
           >
@@ -177,6 +183,7 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             placeholder="GitHub URL"
           />
+
           <label for="portfolio" class="block text-gray-700 font-bold"
             >Portfolio</label
           >
@@ -209,10 +216,11 @@
             type="text"
             id="job-title"
             name="job-title"
-            class="block w-full mb-4 px-4 py-2 border rounded"
+            class="block w-full mb-4 px-4 py-2 border rounded inputData"
             placeholder="Poste occupe"
             required
           />
+           <p  class="text-red-500 text-xs mt-1 hidden inputError">il faut remplir tous les champs.</p>
           <label for="profile-summary" class="block text-gray-700 font-bold"
             >Résumé du Profil</label
           >
@@ -252,10 +260,10 @@
             type="text"
             id="hard-skills"
             name="hard-skills"
-            class="block w-full mb-4 px-4 py-2 border rounded"
+            class="block w-full mb-4 px-4 py-2 border rounded  "
             placeholder="Hard Skills"
           />
-          <ul id="hard-skills-list" class="mb-2 list-disc"></ul>
+          <ul id="hard-skills-list" class="mb-2 list-disc "></ul>
           <button
             type="button"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600 transition"
@@ -271,10 +279,10 @@
             type="text"
             id="soft-skills"
             name="soft-skills"
-            class="block w-full mb-4 px-4 py-2 border rounded"
+            class="block w-full mb-4 px-4 py-2 border rounded  "
             placeholder="Soft Skills"
           />
-          <ul id="soft-skills-list" class="mb-2 list-disc"></ul>
+          <ul id="soft-skills-list" class="mb-2 list-disc "></ul>
 
           <button
             type="button"
@@ -310,7 +318,7 @@
             type="text"
             id="languages-niveau1"
             name="languages"
-            class="block w-full mb-4 px-4 py-2 border rounded"
+            class="block w-full mb-4 px-4 py-2 border rounded  "
             placeholder="Langues"
           />
           <label for="level" class="block text-gray-700 font-bold"
@@ -319,13 +327,14 @@
           <select
             id="languages-niveau2"
             name="level"
-            class="block w-full mb-4 px-4 py-2 border rounded"
+            class="block w-full mb-4 px-4 py-2 border rounded  "
           >
             <option value="Débutant">Débutant</option>
             <option value="Intermédiaire">Intermédiaire</option>
             <option value="Avancé">Avancé</option>
           </select>
-          <ul id="languages-list" class="mb-2 list-disc"></ul>
+          <p  class="text-red-500 text-xs mt-1 hidden inputError">il faut remplir tous les champs.</p>
+          <ul id="languages-list" class="mb-2 list-disc inputData"></ul>
           <button
             type="button"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600 transition"
@@ -365,7 +374,8 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             placeholder="Loisirs"
           />
-          <ul id="interests-list" class="mb-2 list-disc"></ul>
+          <p  class="text-red-500 text-xs mt-1 hidden inputError">il faut remplir tous les champs.</p>
+          <ul id="interests-list" class="mb-2 list-disc inputData"></ul>
           <button
             type="button"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600 transition"
@@ -445,7 +455,8 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             placeholder="Ville"
           />
-          <ul id="education-list" class="mb-2 list-disc"></ul>
+          <p  class="text-red-500 text-xs mt-1 hidden inputError">il faut remplir tous les champs.</p>
+          <ul id="education-list" class="mb-2 list-disc inputData"></ul>
           <button
             type="button"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600 transition "
@@ -536,7 +547,8 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             placeholder="Ville"
           />
-          <ul id="work-experience-list" class="mb-2 list-disc"></ul>
+          <p  class="text-red-500 text-xs mt-1 hidden inputError">il faut remplir tous les champs.</p>
+          <ul id="work-experience-list" class="mb-2 list-disc inputData"></ul>
           <button
             type="button"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600 transition"
@@ -587,7 +599,8 @@
             class="block w-full mb-4 px-4 py-2 border rounded"
             placeholder="Certifications URL"
           />
-          <ul id="certifications-list" class="mb-2 list-disc"></ul>
+          <p  class="text-red-500 text-xs mt-1 hidden inputError">il faut remplir tous les champs.</p>
+          <ul id="certifications-list" class="mb-2 list-disc inputData"></ul>
           <button
             type="button"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-600 transition"
@@ -659,7 +672,7 @@
           </div>
         </form>
         <form id="CVModel-preview" class="hidden">
-          <div id="cv" class="mb-10"></div>
+          <div id="cv" class="mb-10 full-height"></div>
           <div class="flex justify-between mt-4 ">
             <button
               type="button"
